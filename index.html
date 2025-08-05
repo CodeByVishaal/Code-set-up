@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- 🌙 Dark mode script to prevent white flash -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem('theme');
+          if (
+            theme === 'dark' ||
+            (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          ) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          console.error('Error applying dark mode early:', e);
+        }
+      })();
+    </script>
+
     <title>Vite + React + TS</title>
   </head>
   <body>
