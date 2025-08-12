@@ -1,6 +1,26 @@
+import TechStack from "./components/BlurText/TechStack";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Marquee from "./components/sections/Marquee";
 import PortfolioOverview from "./components/sections/portfolio-overview";
+import {
+  Bootstrap5,
+  CSS,
+  Django,
+  Docker,
+  Git,
+  HTML5,
+  JavaScript,
+  PostgreSQL,
+  Postman,
+  Python,
+  React,
+  ShadcnUI,
+  Swagger,
+  TailwindCSS,
+  TypeScript,
+  ViteJS,
+} from "developer-icons";
 
 function App() {
   return (
@@ -14,8 +34,12 @@ function App() {
         </div>
 
         {/* Hero Section */}
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 my-6">
           <PortfolioOverview />
+        </div>
+
+        <div className="container flex justify-center mx-auto py-10 px-6">
+          <TechStack />
         </div>
       </div>
     </div>
