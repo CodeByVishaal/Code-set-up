@@ -4,6 +4,7 @@ import BlurInView from "../BlurText/BlurInView";
 import { LinkedinIcon } from "../ui/linkedin";
 import { GithubIcon } from "../ui/github";
 import { InstagramIcon } from "../ui/instagram";
+import profile_img from "../../assets/profile-image.jpg";
 
 // --- SVG Icon Components ---
 // These are the icon components for the social media links in the footer.
@@ -20,7 +21,7 @@ const userImage =
 // The main portfolio component, now fully responsive with light/dark mode support.
 const Portfolio = () => {
   return (
-    <div className="flex items-center justify-center font-sans bg-gray-50 dark:bg-black">
+    <div className="flex items-center justify-center font-sans dark:bg-black">
       <div className="bg-white dark:bg-black rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-5xl p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
         {/* Main Content (Hero Section) */}
         <main className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 py-10">
@@ -60,9 +61,9 @@ const Portfolio = () => {
             {/* The image is clipped to a similar path */}
             <div className="w-full h-full">
               <img
-                src={userImage}
+                src={profile_img}
                 alt="Aesthetic scenery in grayscale"
-                className="absolute w-full h-full object-cover grayscale dark:brightness-90" // Added grayscale filter and dark mode brightness adjustment
+                className="absolute max-w-full h-auto object-cover" // Added grayscale filter and dark mode brightness adjustment
                 style={{ clipPath: "url(#blob-clip)" }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

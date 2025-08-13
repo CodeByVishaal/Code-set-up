@@ -21,7 +21,7 @@ import Marquee from "../sections/Marquee";
 const TechStack = () => {
   return (
     <div>
-      <div className="">
+      <div className="mt-10">
         <Marquee
           speed={40}
           pauseOnHover
