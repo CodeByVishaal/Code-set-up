@@ -114,12 +114,13 @@ function Marquee({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)]" +
+        "group flex overflow-x-hidden p-2 [--gap:2rem] [gap:var(--gap)]" +
           (vertical ? " flex-col" : " flex-row"),
         className
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      style={{ ...props.style, maxWidth: "100vw" }}
     >
       <div
         ref={contentRef}
@@ -127,6 +128,7 @@ function Marquee({
           "flex shrink-0 justify-around [gap:var(--gap)]" +
             (vertical ? " flex-col" : " flex-row")
         )}
+        style={{ width: "max-content" }}
       >
         {Array(repeat)
           .fill(0)
@@ -135,6 +137,7 @@ function Marquee({
               key={i}
               ref={i === 0 ? singleContentBlockRef : null}
               className="flex gap-8"
+              style={{ minWidth: "fit-content" }}
             >
               {children}
             </div>

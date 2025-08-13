@@ -21,6 +21,7 @@ import {
   TypeScript,
   ViteJS,
 } from "developer-icons";
+import ProjectsSection from "./components/sections/ProjectsSection";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <div className="container flex justify-center mx-auto py-10 px-6">
           <TechStack />
         </div>
+        <ProjectsSection />
       </div>
     </div>
   );
