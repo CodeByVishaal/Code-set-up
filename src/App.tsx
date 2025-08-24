@@ -1,26 +1,6 @@
 import TechStack from "./components/BlurText/TechStack";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Marquee from "./components/sections/Marquee";
 import PortfolioOverview from "./components/sections/portfolio-overview";
-import {
-  Bootstrap5,
-  CSS,
-  Django,
-  Docker,
-  Git,
-  HTML5,
-  JavaScript,
-  PostgreSQL,
-  Postman,
-  Python,
-  React,
-  ShadcnUI,
-  Swagger,
-  TailwindCSS,
-  TypeScript,
-  ViteJS,
-} from "developer-icons";
 import ProjectsSection from "./components/sections/ProjectsSection";
 
 function App() {

@@ -25,10 +25,16 @@ const ProjectsSection: React.FC = () => {
       demo: "#",
     },
     {
-      title: "E-Commerce Platform",
+      title: "Payment Gateway System",
       description:
-        "Modern e-commerce solution with payment integration, inventory management, and analytics dashboard.",
-      tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+        "A Django REST API-based payment gateway system with Razorpay integration, featuring user authentication, product management, and secure payment processing with JWT token authentication.",
+      tech: [
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Razorpay",
+        "Python",
+      ],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500",
       github: "https://github.com/CodeByVishaal",
       demo: "#",

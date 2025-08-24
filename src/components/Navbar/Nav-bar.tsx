@@ -3,13 +3,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SunIcon } from "../ui/sun";
 import { MoonIcon } from "../ui/moon";
-import { HomeIcon } from "../ui/home";
 import { useTheme } from "@/hooks/useTheme";
 import { UserIcon } from "../ui/user";
 import { FlaskIcon } from "../ui/flask";
 
-const Profile = ({ className = "w-5 h-5" }) => <UserIcon size={24} />;
-const Projects = ({ className = "w-5 h-5" }) => <FlaskIcon size={24} />;
+const Profile = () => <UserIcon size={24} />;
+
+const Projects = () => <FlaskIcon size={24} />;
+// @ts-ignore
 const SettingsIcon = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,6 @@ import {
   Postman,
   Python,
   React,
-  ShadcnUI,
   Swagger,
   TailwindCSS,
   TypeScript,

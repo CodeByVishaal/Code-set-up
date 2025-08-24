@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import BlurInView from "../BlurText/BlurInView";
 import { LinkedinIcon } from "../ui/linkedin";
 import { GithubIcon } from "../ui/github";
@@ -15,6 +14,7 @@ export default function PortfolioOverview() {
   return <Portfolio />;
 }
 
+// @ts-ignore
 const userImage =
   "https://i.pinimg.com/736x/3c/a0/23/3ca023b594a47949e4664190d0c30e1a.jpg";
 

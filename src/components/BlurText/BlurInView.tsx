@@ -7,7 +7,7 @@ type BlurInViewProps = {
   delayPerChild?: number; // optional delay for stagger if you want
 };
 
-const BlurInView = ({ children, delayPerChild = 0.05 }: BlurInViewProps) => {
+const BlurInView = ({ children }: BlurInViewProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, filter: "blur(10px)" }}

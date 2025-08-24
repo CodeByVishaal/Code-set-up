@@ -61,6 +61,7 @@ function Marquee({
   const animX = useRef<number>(0);
   const isPaused = useRef<boolean>(false);
 
+  // @ts-ignore
   useAnimationFrame((t, delta) => {
     if (
       !containerRef.current ||
