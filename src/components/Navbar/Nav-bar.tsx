@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { SunIcon } from "../ui/sun";
-import { MoonIcon } from "../ui/moon";
 import { useTheme } from "@/hooks/useTheme";
-import { UserIcon } from "../ui/user";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { FlaskIcon } from "../ui/flask";
+import { MoonIcon } from "../ui/moon";
+import { SunIcon } from "../ui/sun";
+import { UserIcon } from "../ui/user";
 
 const Profile = () => <UserIcon size={24} />;
 
@@ -104,6 +104,13 @@ function ExpandedTabs({ tabs, className, onChange }: ExpandedTabsProps) {
   const handleSelect = (index: number) => {
     setSelected(index);
     if (onChange) onChange(index);
+    const selectedTab = tabs[index];
+    if (selectedTab.type === "tab" && selectedTab.title === "Projects") {
+      const section = document.getElementById("projects");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   const SeparatorComponent = () => (
