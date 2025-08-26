@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 // cn utility function (similar to clsx or classnames)
 function cn(...classes: (string | boolean | undefined | null)[]): string {
@@ -94,7 +94,10 @@ function Marquee({
     if (vertical) {
       contentRef.current.style.transform = `translateY(${animX.current}px)`;
     } else {
-      contentRef.current.style.transform = `translateX(${animX.current}px)`;
+      const offset = reverse ? -loopDistance : 0;
+      contentRef.current.style.transform = `translateX(${
+        animX.current + offset
+      }px)`;
     }
   });
 

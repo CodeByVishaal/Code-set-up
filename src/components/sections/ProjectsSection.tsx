@@ -42,7 +42,7 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 2,
-      title: "Payment Gateway System",
+      title: "Payment Gateway",
       description: "Secure payment processing with Razorpay",
       longDescription:
         "A Django REST API-based payment gateway system with Razorpay integration, featuring comprehensive user authentication, advanced product management, and secure payment processing with JWT token authentication. Built for scalability and security.",
@@ -80,7 +80,7 @@ const ProjectsSection: React.FC = () => {
         "JUnit 5",
       ],
       image: inventory_img,
-      github: "https://github.com/CodeByVishaal/SIMS-api-",
+      github: "https://github.com/CodeByVishaal/SIMS",
       demo: "#",
       year: "2024",
       category: "API Development",
@@ -101,10 +101,13 @@ const ProjectsSection: React.FC = () => {
           >
             <BlurInView>
               <h2 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white mb-6">
-                Selected
+                Favourite
               </h2>
+
               <h3 className="text-6xl md:text-8xl font-bold text-gray-900 dark:text-white mb-8">
-                Works
+                <span className="dark:text-red-500 dark:red-text-glow text-red-600">
+                  Works
+                </span>
               </h3>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 A collection of projects that showcase my expertise in
@@ -134,6 +137,35 @@ interface ProjectSectionProps {
   index: number;
   isEven: boolean;
 }
+
+const HighlightedTitle: React.FC<{ title: string }> = ({ title }) => {
+  const parts = title.split(" ");
+
+  // Handle special cases
+  if (title.includes("(SIMS)")) {
+    const base = title.replace("(SIMS)", "").trim();
+    return (
+      <span>
+        {base}{" "}
+        <span className="dark:text-red-500 dark:red-text-glow text-red-600">
+          (SIMS)
+        </span>
+      </span>
+    );
+  }
+
+  const lastWord = parts.pop();
+  const firstPart = parts.join(" ");
+
+  return (
+    <span>
+      {firstPart}{" "}
+      <span className="dark:text-red-500 dark:red-text-glow text-red-600">
+        {lastWord}
+      </span>
+    </span>
+  );
+};
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({
   project,
@@ -264,7 +296,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
 
             {/* Title */}
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-              {project.title}
+              <HighlightedTitle title={project.title} />
             </h3>
 
             {/* Description */}

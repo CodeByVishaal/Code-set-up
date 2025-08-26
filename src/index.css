@@ -23,6 +23,25 @@ html, body{
   display: none;
 }
 
+/* Custom black-red gradient backgrounds for dark theme */
+.dark-gradient-bg {
+  background: linear-gradient(to bottom, #000000 0%, #1a0000 25%, #330000 50%, #1a0000 75%, #000000 100%);
+  background-attachment: fixed;
+}
+
+.dark-gradient-card {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1f0505 50%, #0a0a0a 100%);
+  border: 1px solid rgba(255, 50, 50, 0.1);
+}
+
+.passion-red-glow {
+  box-shadow: 0 0 30px rgba(255, 50, 50, 0.3), 0 0 60px rgba(255, 50, 50, 0.1);
+}
+
+.red-text-glow {
+  text-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -97,37 +116,38 @@ html, body{
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Black-Red Gradient Theme */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #111111;
+  --popover-foreground: #ffffff;
+  --primary: #ff3232; /* Passion Red */
+  --primary-foreground: #ffffff;
+  --secondary: #1a0000;
+  --secondary-foreground: #ffffff;
+  --muted: #1f0505;
+  --muted-foreground: #cccccc;
+  --accent: #ff3232;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4444;
+  --border: rgba(255, 50, 50, 0.2);
+  --input: rgba(255, 50, 50, 0.1);
+  --ring: #ff3232;
+  --chart-1: #ff3232;
+  --chart-2: #ff5555;
+  --chart-3: #ff7777;
+  --chart-4: #ff9999;
+  --chart-5: #ffbbbb;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ff3232;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1f0505;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 50, 50, 0.2);
+  --sidebar-ring: #ff3232;
 }
 
 @layer base {
@@ -135,6 +155,28 @@ html, body{
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+  }
+  
+  /* Apply gradient background to dark mode */
+   .dark body {
+    background: linear-gradient(to bottom, #000000 0%, #1a0000 25%, #330000 50%, #1a0000 75%, #000000 100%) !important;
+    background-attachment: fixed;
+  }
+  
+  /* Red glow effects for interactive elements in dark mode */
+  .dark button:hover,
+  .dark .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.4);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Accent borders and highlights */
+  .dark .accent-border {
+    border-color: rgba(255, 50, 50, 0.3);
+  }
+  
+  .dark .accent-text {
+    color: #ff3232;
   }
 }
