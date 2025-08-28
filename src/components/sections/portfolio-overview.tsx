@@ -23,6 +23,10 @@ const Portfolio = () => {
   return (
     <div className="flex items-center justify-center font-sans dark:bg-black">
       <div className="bg-white dark:bg-black rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-5xl p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
+        <div className="dark:absolute dark:inset-0 dark:pointer-events-none dark:opacity-10">
+          <div className="dark:absolute dark:top-1/4 dark:right-1/4 dark:w-32 dark:h-32 dark:bg-red-500 dark:rounded-full dark:blur-2xl dark:animate-pulse" />
+          <div className="dark:absolute dark:bottom-1/4 dark:left-1/4 dark:w-24 dark:h-24 dark:bg-red-600 dark:rounded-full dark:blur-xl dark:animate-pulse dark:delay-500" />
+        </div>
         {/* Main Content (Hero Section) */}
         <main className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 py-10">
           {/* Left Side: Text Content */}
@@ -38,7 +42,7 @@ const Portfolio = () => {
                 user-friendly websites.
               </p>
             </BlurInView>
-            <button className="mt-8 bg-black dark:bg-white text-white dark:text-black font-bold py-3 px-10 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">
+            <button className="mt-8 bg-black dark:bg-white text-white dark:text-red-600 font-bold py-3 px-10 rounded-lg hover:bg-gray-800 dark:hover:bg-red-600 dark:hover:text-white transition-colors">
               Know Me ?
             </button>
           </div>
@@ -88,26 +92,26 @@ const Portfolio = () => {
         </main>
 
         {/* Social Links Footer - Now fully responsive with dark mode support */}
-        <footer className="flex justify-center pt-8 pb-4 md:p-0 md:justify-start md:absolute md:bottom-8 md:left-8 lg:bottom-12 lg:left-12">
-          <div className="flex space-x-5 md:space-x-6 text-black-500 dark:text-white-400 text-lg md:text-xl">
+        <footer className="flex justify-center pt-8 pb-4 md:p-0 md:justify-start md:absolute md:bottom-8 md:left-8 lg:bottom-12 lg:left-12 relative z-10">
+          <div className="flex space-x-5 md:space-x-6 text-black dark:text-gray-300 text-lg md:text-xl">
             <a
               href="https://www.linkedin.com/in/vishalr5/"
               target="_blank"
-              className="hover:text-black dark:hover:text-white transition-colors"
+              className="hover:text-black dark:hover:text-red-600 transition-colors duration-300 dark:hover:drop-shadow-[0_0_5px_rgba(255,50,50,0.5)]"
             >
               <LinkedinIcon />
             </a>
             <a
               href="https://github.com/CodeByVishaal"
               target="_blank"
-              className="hover:text-black dark:hover:text-white transition-colors"
+              className="hover:text-black dark:hover:text-red-600 transition-colors duration-300 dark:hover:drop-shadow-[0_0_5px_rgba(255,50,50,0.5)]"
             >
               <GithubIcon />
             </a>
             <a
               href="https://www.instagram.com/vishaalind/?utm_source=qr#"
               target="_blank"
-              className="hover:text-black dark:hover:text-white transition-colors"
+              className="hover:text-black dark:hover:text-red-600 transition-colors duration-300 dark:hover:drop-shadow-[0_0_5px_rgba(255,50,50,0.5)]"
             >
               <InstagramIcon />
             </a>

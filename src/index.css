@@ -42,6 +42,21 @@ html, body{
   text-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
 }
 
+ /* Red hover effects for h tags and p tags in both light and dark mode */
+  h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+  p:hover {
+    color: #dc2626 !important; /* red-600 */
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Add subtle glow effect in dark mode */
+  .dark h1:hover, .dark h2:hover, .dark h3:hover, .dark h4:hover, .dark h5:hover, .dark h6:hover,
+  .dark p:hover {
+    text-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+  }
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

@@ -8,26 +8,8 @@ import { SunIcon } from "../ui/sun";
 import { UserIcon } from "../ui/user";
 
 const Profile = () => <UserIcon size={24} />;
-
 const Projects = () => <FlaskIcon size={24} />;
-// @ts-ignore
-const SettingsIcon = ({ className = "w-5 h-5" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-    <circle cx="12" cy="12" r="3" />
-  </svg>
-);
+
 const MailIcon = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +97,7 @@ function ExpandedTabs({ tabs, className, onChange }: ExpandedTabsProps) {
 
   const SeparatorComponent = () => (
     <div
-      className="h-7 w-px bg-slate-200 dark:bg-slate-700"
+      className="h-7 w-px bg-slate-200 dark:bg-red-500/30"
       aria-hidden="true"
     />
   );
@@ -123,7 +105,7 @@ function ExpandedTabs({ tabs, className, onChange }: ExpandedTabsProps) {
   return (
     <div
       ref={containerRef}
-      className={`flex flex-row items-center gap-1 rounded-full border border-slate-200 bg-white/70 dark:bg-black dark:border-slate-700 p-1 shadow-md backdrop-blur-sm ${
+      className={`flex flex-row items-center gap-1 rounded-full border border-slate-200 dark:border-red-500/30 bg-white/70 dark:bg-black/80 dark:backdrop-blur-md p-1 shadow-md backdrop-blur-sm dark:shadow-red-500/20 ${
         className || ""
       }`}
     >
@@ -148,18 +130,18 @@ function ExpandedTabs({ tabs, className, onChange }: ExpandedTabsProps) {
           <button
             key={tab.title}
             onClick={() => handleSelect(index)}
-            className={`relative z-10 flex items-center rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none 
+            className={`relative z-10 flex items-center rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 focus:outline-none hover-glow
             ${
               isSelected
-                ? "text-slate-900 dark:text-green-300"
-                : "text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100"
+                ? "text-red-600 dark:red-text-glow hover:text-red-600"
+                : "text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-300"
             }
           `}
           >
             {isSelected && (
               <motion.div
                 layoutId="pill"
-                className="absolute inset-0 z-0 rounded-full bg-white dark:bg-green-500/20 backdrop-blur-sm border border-green-400/30 shadow-sm"
+                className="absolute inset-0 z-0 rounded-full bg-white dark:bg-red-500/20 backdrop-blur-sm border border-gray-200 dark:border-red-400/30 shadow-sm dark:shadow-red-500/30"
                 transition={{ type: "spring", stiffness: 500, damping: 40 }}
               />
             )}
@@ -188,19 +170,19 @@ function ExpandedTabs({ tabs, className, onChange }: ExpandedTabsProps) {
 }
 
 export default function Tabs2() {
-  const { theme, toggleTheme } = useTheme(); // ✅ must come BEFORE defining TABS
+  const { theme, toggleTheme } = useTheme();
+
   const TABS: TabItem[] = [
     { type: "tab", title: "Profile", icon: Profile },
     { type: "tab", title: "Projects", icon: Projects },
     { type: "tab", title: "Messages", icon: MailIcon },
-    // { type: "separator" },
     {
       type: "custom",
       render: () => (
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="rounded-full text-black dark:text-white transition-colors"
+          className="rounded-full text-red-500 hover:text-red-400 transition-colors duration-300 hover:drop-shadow-[0_0_5px_rgba(255,50,50,0.5)]"
         >
           {theme === "dark" ? (
             <SunIcon size={24} className="w-5 h-5" />
@@ -210,7 +192,6 @@ export default function Tabs2() {
         </button>
       ),
     },
-    // { type: "tab", title: "Settings", icon: SettingsIcon },
   ];
 
   return <ExpandedTabs tabs={TABS} />;
