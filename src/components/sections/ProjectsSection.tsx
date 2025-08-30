@@ -62,7 +62,7 @@ const ProjectsSection: React.FC = () => {
       category: "API Development",
     },
     {
-      id: 2,
+      id: 3,
       title: "Smart Inventory Management System (SIMS)",
       description:
         "A comprehensive inventory management solution built with Spring Boot and PostgreSQL for real-time inventory tracking and automated stock management.",

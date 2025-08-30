@@ -1,5 +1,5 @@
 import TechStack from "./components/BlurText/TechStack";
-import Navbar from "./components/Navbar";
+import FloatingNavbar from "./components/Navbar/FloatingNavbar";
 import PortfolioOverview from "./components/sections/portfolio-overview";
 import ProjectsSection from "./components/sections/ProjectsSection";
 
@@ -13,18 +13,16 @@ function App() {
         <div className="dark:absolute dark:bottom-1/4 dark:right-1/4 dark:w-96 dark:h-96 dark:bg-red-800/5 dark:rounded-full dark:blur-3xl dark:animate-pulse dark:delay-1000" />
       </div>
 
+      {/* Navbar */}
+      <FloatingNavbar />
+
       {/* Content with higher z-index */}
       <div className="relative z-10">
-        {/* Navbar Wrapper */}
-        <div className="w-full">
-          <div className="container mx-auto px-4 py-4 flex justify-center">
-            <Navbar />
-          </div>
-        </div>
-
         {/* Hero Section */}
-        <div className="container mx-auto px-4 my-6">
-          <PortfolioOverview />
+        <div className="container mx-auto px-4 my-10">
+          <section id="profile">
+            <PortfolioOverview />
+          </section>
         </div>
 
         {/* Tech Stack Section */}
